@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  6 NOV 2022 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  6 NOV 2022 18:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/rugli/Desktop/PoliTo/Ingegneria matematica/I anno/Processi stocastici/HW/hw1/assignment/main.tex"
-(c:/Users/rugli/Desktop/PoliTo/Ingegneria matematica/I anno/Processi stocastici/HW/hw1/assignment/main.tex
+**"c:/Users/rugli/Desktop/PoliTo/Ingegneria matematica/I anno/Processi stocastici/HOMEWORK-PROCESSI/hw1/assignment/main.tex"
+(c:/Users/rugli/Desktop/PoliTo/Ingegneria matematica/I anno/Processi stocastici/Homework-Processi/hw1/assignment/main.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-10-26> (./fphw.cls
 Document Class: fphw 2019/03/19
@@ -567,29 +567,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip63
 )
-c:/Users/rugli/Desktop/PoliTo/Ingegneria matematica/I anno/Processi stocastici/HW/hw1/assignment/main.tex:67: Undefined control sequence.
-l.67 \group
-           {Giulia Monchietto, Edoardo Venturini}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-c:/Users/rugli/Desktop/PoliTo/Ingegneria matematica/I anno/Processi stocastici/HW/hw1/assignment/main.tex:67: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.67 \group{G
-             iulia Monchietto, Edoardo Venturini}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 71.
-(c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1ppl.fd
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 70.
+ (c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
@@ -598,24 +577,24 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -671,100 +650,63 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@lstlisting=\count325
-Package hyperref Info: Link coloring ON on input line 71.
+Package hyperref Info: Link coloring ON on input line 70.
+ (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-
-c:/Users/rugli/Desktop/PoliTo/Ingegneria matematica/I anno/Processi stocastici/HW/hw1/assignment/main.tex:74: Undefined control sequence.
-\HyOrg@maketitle ...GroupLang : {\itshape \@group 
-                                                  } \vspace {20pt} \end {cen...
-l.74 
-     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 83.
-(c:/texlive/2022/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 82.
+ (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 83.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 82.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 83.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 82.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 83.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 82.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 83.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 82.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 <figures/swallow.jpg, id=7, 1606.0pt x 1069.9975pt>
 File: figures/swallow.jpg Graphic file (type jpg)
 <use figures/swallow.jpg>
-Package pdftex.def Info: figures/swallow.jpg  used on input line 85.
+Package pdftex.def Info: figures/swallow.jpg  used on input line 84.
 (pdftex.def)             Requested size: 227.62206pt x 151.64355pt.
- (./figures/fig1.tikz) (./figures/fig3.tikz) (./figures/fig4.tikz) (./figures/fig5.tikz) (./figures/fig6.tikz) (./figures/fig7.tikz)
-Overfull \vbox (231.74103pt too high) has occurred while \output is active []
+ (./figures/fig1.tikz) (./figures/fig3.tikz) (./figures/fig4.tikz) [1
 
- [1
-
-{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figures/swallow.jpg>]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 153.
+{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figures/swallow.jpg>] (./figures/fig5.tikz) (./figures/fig6.tikz) (./figures/fig7.tikz) [2]
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 152.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2] (./figures/fig4.tikz) [3]
-
-LaTeX Warning: Reference `eq:es3_1' on page 4 undefined on input line 209.
-
-(./figures/fig6.tikz) [4] (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+) (./figures/fig4.tikz) [3] [4] (./figures/fig6.tikz) (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 284.
- (./codes/luftballons.pl)
-
-LaTeX Warning: Reference `lst:luftballons' on page 5 undefined on input line 287.
-
-
-LaTeX Warning: Reference `lst:luftballons' on page 5 undefined on input line 288.
-
-[5] [6] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 283.
+ (./codes/luftballons.pl) [5] [6] (./main.aux)
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25700 strings out of 474975
- 493332 string characters out of 5780237
- 1048362 words of memory out of 5000000
- 46650 multiletter control sequences out of 15000+600000
+ 25706 strings out of 474975
+ 493534 string characters out of 5780237
+ 1051902 words of memory out of 5000000
+ 46651 multiletter control sequences out of 15000+600000
  497823 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,103p,615b,1600s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (6 pages, 318971 bytes).
+ 99i,13n,103p,630b,1600s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (6 pages, 306154 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 149 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  53 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

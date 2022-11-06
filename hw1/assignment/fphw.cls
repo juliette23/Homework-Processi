@@ -26,10 +26,12 @@
 % We define the macro for the name of the institution
 \newcommand{\institute}[1]{ \newcommand{\instituteloc}{#1} }
 
+\newcommand{\group}[1]{ \newcommand{\grouploc}{#1} }
+
 %these are auxiliary definitions used in the title section
 \newcommand{\CourseLang}{Corso}
 \newcommand{\DateLang}{Data consegna}
-\newcommand{\StudentLang}{Studente}
+\newcommand{\StudentLang}{Studenti}
 \newcommand{\ProfessorLang}{Professore}
 \newcommand{\GroupLang}{Gruppo}
 
@@ -114,7 +116,7 @@
         \\
         \DateLang: {\itshape\@date}
         \\
-        \GroupLang: {\itshape\@group}
+        \ifx\grouploc\undefined{}\else{\GroupLang: {\itshape\grouploc}}\fi
         \vspace{20pt}
     \end{center}
 }
