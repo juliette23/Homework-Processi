@@ -80,6 +80,7 @@
 %----------------------------------------------------------------------------------------
 %	ASSIGNMENT CONTENT
 %----------------------------------------------------------------------------------------
+\section*{Esercizio 1}
 \begin{problem}
 	\smallskip
 	Esibire (se esiste, altrimenti specificare che non esiste e motivare il perchè)
@@ -100,20 +101,20 @@
 
 \subsection*{Soluzione}
 \begin{enumerate}[(\itshape a\normalfont)]
-	\item Definiamo una DTMC con la seguente matrice di transizione P, la quale possiede esattamente due elementi positivi per ogni riga:\\
+	\item Definiamo una DTMC con la seguente matrice di transizione P, la quale possiede esattamente due elementi positivi per ogni riga:
 	\begin{equation*}
 	P = \begin{pmatrix}
 		0 & 0.5 & 0 & 0.5\\
 		0.5 & 0 & 0.5 & 0\\
 		0 & 0.5 & 0 & 0.5\\
 		0.5 & 0 & 0.5 & 0
-	\end{pmatrix}
-	\end{equation*}\\
-	La DTMC è rappresentabile graficamente come:\\
+		\end{pmatrix}.
+	\end{equation*}
+	La DTMC è rappresentabile graficamente come:
 	\ctikzfig{fig5}
 
 	Osserviamo che la catena è irriducibile, poichè tutti gli stati sono comunicanti, ed è inoltre finita, perciò esiste ed è unica la distribuzione stazionaria.\\
-	Una catena ammette una distribuzione limite se esiste una distribuzione $\pi$ tale che 
+	Una catena ammette una distribuzione limite se esiste una distribuzione $\pi$ tale che, 
 	qualsiasi sia la distribuzione iniziale $\alpha = (\alpha_i)_{i \in S}$, $\forall x \in S$, dove $S$ è lo spazio degli stati, vale:
 	\begin{equation*}
 		\lim_{n \to \infty}  \mathbb{P} (X_n = x) = \pi (x)
@@ -122,6 +123,7 @@
 	potrà essere nuovamente visitato solamente negli istanti $t' = t + 2k$ per $k\in \mathbb{N}$. Segue che non può esistere una distribuzione limite, 
 	dato che, partendo da uno tra gli stati $1$ e $3$, negli istanti $t' = 2k$ per $k \in \mathbb{N}$ la catena si potrà trovare solamente negli stati $1$ e $3$, mentre negli
 	istanti $t' = 2k + 1$ la DTMC si potrà trovare solamente nello stato $2$ o nello stato $4$.
+	Quindi il comportamento limite della catena dipende dalla distribuzione iniziale $\alpha$.
 	\item Per costruire un Processo di Poisson non omogeneo ci riferiamo al seguente teorema:\\
 	\\
 	\null\quad \textit{Sia $N(t)$ un processo di Poisson con parametro 1, e sia $\lambda(t)$ una funzione\\
@@ -131,12 +133,11 @@
 	\end{equation*}
 	\null\quad è un Processo di Poisson non omogeneo con intensità $\lambda(t)$}.\\
 	\\
-	In questo caso, la funzione $2\sin(x)$ non è non negativa, quindi non è possibile costruire un Processo di Poisson con tale intensità.\\
-	\\
+	In questo caso, la funzione $2\sin(x)$ non è non negativa, quindi non è possibile costruire un Processo di Poisson con tale intensità.
 	\item Riferendoci al teorema precedente, presa $f(t) = 2t\log(t+2) - 2t = \int_0^t 2\log(\mu + 2)d\mu$, 
 	si ha che $M(t) = N(f(t))$ è il processo di Poisson desiderato.
 	\item Una distribuzione è stazionaria se e solo se può essere espressa come combinazione convessa di distribuzioni stazionarie estremali.\\
-	Perciò se per assurdo esistesse più di una distribuzione stazionaria, ciò implicherebbe l'esistenza di infinite distribuzioni stazionarie ottenibili come combinazione convessa delle precedenti,
+	Perciò, se per assurdo esistesse più di una distribuzione stazionaria, ciò implicherebbe l'esistenza di infinite distribuzioni stazionarie ottenibili come combinazione convessa delle precedenti,
 	contraddicendo l'ipotesi iniziale dell'esistenza di più di una distribuzione stazionaria.
 	In conclusione, non può esistere una DTMC con esattamente $3$ distribuzioni stazionarie.
 	\item Consideriamo la seguente DTMC con relativa matrice di transizione P definita come:
@@ -147,7 +148,7 @@
 			0 & 0 & 0 & 1\\
 			0 & 0 & 1 & 0
 		\end{pmatrix}
-	\end{equation*}\\
+	\end{equation*}
 	La DTMC possiede la seguente rappresentazione grafica:
 	\ctikzfig{fig1}
 	Le distribuzioni stazionarie relative alla DTMC sono costituite da tutti i possibili vettori $\pi \in \mathbb{R}_+ ^4$ tali da soddisfare:
@@ -177,16 +178,16 @@
 	\end{equation*}
 	Per quanto riguarda la distribuzione limite, essa non esiste poichè per qualunque classe ricorrente
 	in cui la catena venga inizializzata, la DTMC rimarrà in quest'ultima classe con probabilità $1$ ad ogni tempo $t$.
-	Dato che esistono due classi ricorrenti,non può esistere un'unica distribuzione limite indipendente dallo stato di partenza.\\
+	Dato che esistono due classi ricorrenti,non può esistere una distribuzione limite indipendente dallo stato di partenza.
 
 
 \end{enumerate}
 
-
+\newpage
 \section*{Esercizio 2}
 \begin{problem}
 	\smallskip
-	Sia $(X_n)_{n \ge 0}$ una catena di Markov sullo spazio $S$. Si provi che:\\
+	Sia $(X_n)_{n \ge 0}$ una catena di Markov sullo spazio $S$. Si provi che:
 	\begin{enumerate}[(\itshape a\normalfont)]
 		\item Ogni classe $E$ chiusa e irriducibile per tale catena è massimale, 
 		ovvero se $E \subset F$ per una classe F chiusa e irriducibile, allora $E = F$.
@@ -203,19 +204,20 @@
 		\begin{equation*}
 			\forall i \in F ~ \exists j \in E \subset F : j \to i.
 		\end{equation*}
-		Essendo $E$ chiusa $i \in E$, quindi $F \subset E$;
+		Essendo $E$ chiusa, $i \in E$ e quindi $F \subset E$;
 		poiché per ipotesi vale anche che $E \subset F$, allora $E = F$.
 		\item $E_1$ è irriducibile, quindi in particolare
 		\begin{equation*}
 			\forall i \in E_1 ~ \exists j \in E_1 \cap E_2 \ne \emptyset : i \leftrightarrow j.
 		\end{equation*}
-		Poiché anche $E_2$ è irriducibile, vale anche che $j \leftrightarrow k ~ \forall k \in E_2 \setminus E_1$.
+		Poiché $E_2$ è irriducibile, vale anche che $j \leftrightarrow k ~ \forall k \in E_2 \setminus E_1$.
 		Essendo la comunicazione una relazione di equivalenza, per la proprietà transitiva si ha che $i \leftrightarrow k$, quindi la chiusura di $E_2$ implica che $i \in E_2$.
-		Ne consegue che $E_1 \subset E_2$; analogamente si può dimostrare che $E_2 \subset E_1$, dunque $E_1 = E_2$
+		Ne consegue che $E_1 \subset E_2$; analogamente si può dimostrare che $E_2 \subset E_1$, dunque $E_1 = E_2$.
 	\end{enumerate}
 
 %----------------------------------------------------------------------------------------
 
+\newpage
 \section*{Esercizio 3}
 
 \begin{problem}
@@ -319,6 +321,7 @@ In conclusione, la strategia audace è più efficace.
 In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro il $9.64\%$ della strategia timida.
 %----------------------------------------------------------------------------------------
 
+\newpage
 \section*{Esercizio 4}
 
 \begin{problem}
@@ -344,7 +347,7 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 		\ctikzfig{fig6}
 		Notiamo che tale catena è un processo di nascita e morte definito sull'intervallo $0, \dots, N$.
 	\item La catena è irriducibile. Infatti $\forall i,j \in S$, come si può vedere dal grafo, esiste un cammino che congiunge i due nodi, cioé $i \leftrightarrow j$.
-	\item La catena è aperiodica. Per mostrarlo ricordiamo che il periodo è una proprietà di classe, e quindi siccome la catena è aperiodica è uguale per tutti gli stati in $S$.
+	\item La catena è aperiodica. Per mostrarlo ricordiamo che il periodo è una proprietà di classe, e quindi, siccome la catena è irriducibile, è uguale per tutti gli stati in $S$.
 		Prendiamo lo stato $i = 0$. Questo ha un self-loop, quindi è aperiodico e di conseguenza la DTMC stessa è aperiodica.
 	\item La catena è aperiodica, quindi ha periodo unitario.
 	\item La catena è finita e irriducibile, quindi esiste ed è unica la distribuzione stazionaria $\pi = (\pi(i))_{i \in S}$.
@@ -361,23 +364,27 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 	
 \end{enumerate}
 
+%------------------------------------------------
+\newpage
 \section*{Esercizio 5}
 
 \begin{problem}
 	\smallskip
 	A rabbit runs through the maze shown below. At each step it leaves
-	the room it is in by choosing at random one of the doors out of the room.\\
+	the room it is in by choosing at random one of the doors out of the room.
 	\begin{enumerate} [(\itshape a\normalfont)]
-		\item Give the transition matrix P for this Markov chain.\\
-		\item Show that it is irreducible but not aperiodic.\\
-		\item Find the stationary distribution.\\
+		\item Give the transition matrix P for this Markov chain.
+		\item Show that it is irreducible but not aperiodic.
+		\item Find the stationary distribution.
 		\item Now suppose that a carrot is placed on a deadly trap in Room
 		5. The rabbit starts in Room 1. Find the expected number
-		of steps before reaching Room 5 for the first time, starting in Room 1.\\
+		of steps before reaching Room 5 for the first time, starting in Room 1.
 		\item Find the expected time to return to room 1.
 	\end{enumerate}
 	\smallskip
 \end{problem}
+
+%------------------------------------------------
 
 \subsection*{Soluzione}
 	\begin{enumerate}[(\itshape a\normalfont)]
@@ -397,14 +404,13 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 			0 & 0 & 0 & 1/2 & 1/2 & 0
 		\end{pmatrix}
 	\end{equation*}
-	\\
 	\item La catena è irriducibile, in quanto il grafo ad essa associato è fortemente connesso, cioé 
 	per ogni coppia di nodi $(i,j)$ esiste un cammino da $i$ a $j$.\\
 	Se consideriamo inoltre lo stato $i = 6$, si può facilmente notare che
 	\begin{equation*}
 		p^{k}(i,i) > 0 \iff k = 2n : n \in \mathbb{N},
 	\end{equation*}
-	quindi $i$ ha periodo 2; di conseguenza, la catena non è aperiodica.\\
+	quindi $i$ ha periodo 2; di conseguenza, la catena non è aperiodica.
 	\item Dal momento che il grafo associato a questa catena di Markov è indiretto, la componente i-esima della distribuzione stazionaria è data da 
 	\begin{equation*}
 		\pi(i) = \frac{\deg(i)}{N}, \qquad\textnormal{dove }N = \sum_{j=1}^6 \deg(j)
@@ -427,11 +433,12 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 			1/12 \\ 1/12 \\ 1/3 \\ 1/6 \\ 1/6 \\ 1/6
 		\end{pmatrix}
 	\end{equation*}
-	\item Consideriamo
+	\item Consideriamo la variabile
 	\begin{equation*}
-		m(i) = \mathbb{E}_i [T_5] = \mathbb{E}[T_5 | X_0 = i] \qquad \textnormal{dove }T_5\textnormal{ è il tempo di primo passaggio nello stato }i.
+		m(i) = \mathbb{E}_i [T_5] = \mathbb{E}[T_5 | X_0 = i],
 	\end{equation*}
-	Si ha che:
+	dove $T_5$ è il tempo di primo passaggio nello stato $i$.
+	Procedendo con l'analisi al primo passo, si ha che:
 	\begin{align*}
 		m(1) &= 1 + m(3)\\
 		m(2) &= 1 + m(3)\\
@@ -474,7 +481,7 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 		
 		\end{matlaboutput}
 	
-	Si può facilmente notare che la prima componente del vettore $m$ è effettivamente $m(1) = 7$.\\
+	Si può facilmente notare che la prima componente del vettore $m$ è effettivamente $m(1) = 7$.
 	\item Per calcolare il tempo di primo ritorno allo stato 1 ci riferiamo al seguente teorema:\\
 	\\
 	\null\quad \textit{Se una DTMC è irriducibile ed esiste una distribuzione stazionaria $\pi$, allora
@@ -485,6 +492,10 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 	\\
 	Nello specifico, quindi, per questa catena di Markov si ha che $\mathbb{E}_1 [T_1] = \frac{1}{\pi(1)} = 12$.
 \end{enumerate}
+
+%------------------------------------------------
+
+\newpage
 \section*{Esercizio 6}
 
 \begin{problem}
@@ -503,10 +514,10 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 	\smallskip
 \end{problem}
 	
-	%------------------------------------------------
+%------------------------------------------------
 
 \subsection*{Soluzione}
-Definiamo lo spazio degli stati $S$ come l'insieme di tutte le possibili permutazioni degli N libri sullo scaffale, dove ciascuno stato è rappresentato da un N-upla contenente le etichette dei libri.
+Definiamo lo spazio degli stati $S$ come l'insieme di tutte le possibili permutazioni degli $N$ libri sullo scaffale, dove ciascuno stato è rappresentato da un $N$-upla contenente le etichette dei libri.
 La cardinalità di tale spazio degli stati $S$ è quindi data da $N!$.\\
 La catena di Markov discreta può essere rappresentata attraverso un grafo diretto, costituito da:
 \begin{enumerate}
@@ -518,7 +529,7 @@ La catena di Markov discreta può essere rappresentata attraverso un grafo diret
 		\Upsilon = \{&v_1=(1,2,3), v_2=(2,1,3), v_3=(1,3,2), \\
 			&v_4=(2,3,1), v_5=(3,1,2), v_6=(3,2,1)\}
 	\end{align*}
-	e ogni nodo possiederà $6$ archi di cui $3$ entranti e $3$ uscenti dal nodo, per cui il nodo $v_1$ possiederà come archi uscenti $\{(v_1,v_1), (v_1,v_2), (v_1,v_5)\}$,
+	e ogni nodo possiederà $6$ archi, di cui $3$ entranti e $3$ uscenti dal nodo. Per cui il nodo $v_1$ possiederà come archi uscenti $\{(v_1,v_1), (v_1,v_2), (v_1,v_5)\}$,
 	e come archi entranti $\{(v_2,v_1), (v_4,v_1), (v_1,v_1)\}$.
 	
 \end{enumerate}
@@ -533,28 +544,27 @@ Si ottiene dunque la seguente matrice di transizione P:
 Osserviamo che il grafo contiene un self-loop per ciascun nodo, dato dal fatto che è possibile estrarre il primo libro e reinserirlo in prima posizione mantenendo invariata la configurazione.\\
 Si deduce che la catena di Markov è aperiodica poichè sono presenti dei self-loops.\\
 Inoltre la catena è irriducibile, poichè $ \forall i,j \in S$ è possibile scegliere opportunamente un percorso costituito da $N$ passi, la cui probabilità $p^{(N)}(i,j)$ è strettamente positiva.\\
-
-Definiamo $i = (i_1, ... , i_N)$ come il vettore che rappresenta una permutazione dei libri. Notiamo inoltre che $p(i,j)=1/N>0$ se e solo se esiste $h\in \{1,..,N\}$ tale che
-$j_1 = i_h$. Da cui si ha che ciascun nodo nel grafo indotto possiede N archi uscenti.\\
-Notiamo che tale arco è univocamente definito dal valore di $h$ scelto.
+Costruiamo direttamente tale percorso.
+Sia $i = (i_1, ... , i_N)$ un vettore che rappresenta una permutazione dei libri.
+Notiamo che $p(i,j)=1/N>0$ se e solo se esiste $h\in \{1,..,N\}$ tale che $j_1 = i_h$.
+Tale arco è univocamente identificato dal valore di $h$ scelto.
 Possiamo quindi definire le trasformazioni lungo gli archi, le quali rappresentano un passaggio da un nodo all'altro, come $n_h(i)$.\\
-La catena è irriducibile in quanto $\forall i,j \in S$, $i$ comunica con $j$.\\
-Definiamo $I(k)$ per ogni $k \in \{1,..,N\}$ come l'indice di posizione in cui si trova il libro con l'etichetta $K$.
-Si ha che partendo dallo stato $i = (i_1, ... , i_N)$ è possibile giungere a $j = (j_1, ... , j_N)$ tramite la seguente composizione:
+Definiamo ora la variabile $I(k)$ che, ad ogni etichetta $k \in \{1,..,N\}$, associa l'indice di posizione in cui si trova il rispettivo libro.
+Dunque, partendo dallo stato $i = (i_1, ... , i_N)$ è possibile giungere allo stato $j = (j_1, ... , j_N)$ tramite la seguente composizione:
 \begin{equation}
-	n_{I(j_1)} \circ ... \circ n_{I(j_N)} (i)
+	n_{I(j_1)} \circ \dots \circ n_{I(j_N)} (i)
 \end{equation}
 infatti si ha che tramite $n_{I(j_N)} (i)$ si ottiene il valore $h = I(j_N)$ dell'indice di posizione dell'elemento $j_N$, che viene portato in prima posizione nella configurazione successiva.\\
-Procedo in questo modo per gli $N-1$ step successivi facendo slittare gli elementi a ogni iterazione, fino ad ottenere $j$.
+Procedendo in questo modo per gli $N-1$ step successivi, facciamo slittare gli elementi fino ad ottenere l elemento $j$.\\
 Essendo la catena irriducibile e aperiodica, essa ammette un'unica distribuzione di probabilità stazionaria.
-Osserviamo che il grafo $\mathcal{G}$ è regolare poichè per costruzione, ciascun nodo possiede lo stesso numero di archi entranti e archi uscenti.
+Osserviamo che il corrispettivo grafo è regolare poichè, per costruzione, ciascun nodo possiede lo stesso numero di archi entranti e archi uscenti.
 Dato un grafo regolare con relativa matrice di transizione P, il vettore "all-ones" $\mathbf{1}$ è un autovettore della matrice $P'$ relativo all'autovalore $\lambda = 1$.
-Ciò implica che $\mathbf{1}$ è una misura invariante per P. Normalizzando, si ottiene la seguente distribuzione di probabilità invariante per il grafo:
+Ciò implica che $\mathbf{1}$ è una misura invariante per P. Normalizzando, si ottiene la seguente distribuzione di probabilità invariante:
 \begin{equation*}
 	\pi(i) = \frac{1}{N!} \quad \forall i
 \end{equation*}
 	
-\MakeUppercase{è} possibile arrivare a tale risultato anche osservando che la matrice è doppiamente stocastica, di conseguenza la distribuzione invariante di probabilità risulta essere definita come sopra.\\
+\MakeUppercase{è} possibile arrivare a tale risultato anche osservando che la matrice è doppiamente stocastica, di conseguenza la distribuzione invariante di probabilità risulta essere definita come sopra.
 
 
 
