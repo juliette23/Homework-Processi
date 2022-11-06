@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}	
+		\node [state] (0) at (-12, 0) {0};
+		\node [state] (1) at (-9, 0) {1};
+		\node [state] (2) at (-6, 0) {2};
+		\node [state, accepting] (3) at (-3, 0) {3};
+		\node [state] (4) at (0, 0) {4};
+		\node [state] (5) at (3, 0) {5};
+		\node [state] (6) at (6, 0) {6};
+		\node [state] (7) at (9, 0) {7};
+		\node [state] (8) at (12, 0) {8};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\path [-stealth, thick]
+			(1) edge[bend left] node[above] {$p$}   (2)
+			(2) edge[bend left] node[above] {$p$}   (3)
+			(3) edge[bend left] node[above] {$p$}   (4)
+			(4) edge[bend left] node[above] {$p$}   (5)
+			(5) edge[bend left] node[above] {$p$}   (6)
+			(6) edge[bend left] node[above] {$p$}   (7)
+			(7) edge[bend left] node[above] {$p$}   (8)
+			(7) edge[bend left] node[below] {$q$}   (6)
+			(6) edge[bend left] node[below] {$q$}   (5)
+			(5) edge[bend left] node[below] {$q$}   (4)
+			(4) edge[bend left] node[below] {$q$}   (3)
+			(3) edge[bend left] node[below] {$q$}   (2)
+			(2) edge[bend left] node[below] {$q$}   (1)
+			(1) edge[bend left] node[below] {$q$}   (0)
+			(0) edge[loop left]  node {1}()
+			(8) edge[loop right]  node {1}();
+	\end{pgfonlayer}
+\end{tikzpicture}

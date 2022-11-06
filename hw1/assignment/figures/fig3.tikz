@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+   \node[state] (1) {$1$};
+   \node[state] (2) [right= of 1]{$2$};
+   \node[state] (3)  [above= of $(1)!0.5!(2)$]{$3$};
+
+   \path [-stealth, thick]
+		(1) edge[loop left]  	node {}()
+		(2) edge[loop right]  	node {}()
+		(3) edge[loop above]  	node {}();
+\end{tikzpicture}

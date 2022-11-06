@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+    \node[state] (1) {1};
+    \node[state] (2) [below= of 1] {2};
+    \node[state] (3) [right= of 2] {3};
+    \node[state] (4) [above= of 3] {4};
+
+    \path[-stealth, thick]
+        (1) edge [bend left, looseness=0.5] (4)
+        (1) edge [bend left, looseness=0.5] (2)
+        (2) edge [bend left, looseness=0.5] (1)
+        (2) edge [bend left, looseness=0.5] (3)
+        (3) edge [bend left, looseness=0.5] (4)
+        (3) edge [bend left, looseness=0.5] (2)
+        (4) edge [bend left, looseness=0.5] (3)
+        (4) edge [bend left, looseness=0.5] (1);
+\end{tikzpicture}

@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}	
+		\node [state, minimum size = 1.5cm] (0) at (-10, 0) {0};
+		\node [state, minimum size = 1.5cm] (1) at (-5, 0) {1};
+		\node [style=none] (3) at (-1, 0) {};
+		\node [style=none] (4) at (0, 0) {$\dots$};
+		\node [style=none] (5) at (1, 0) {};
+		\node [state, minimum size = 1.5cm] (N-1) at (5, 0) {$N-1$};
+		\node [state, minimum size = 1.5cm] (N) at (10, 0) {$N$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\path [-stealth, thick]
+			(1) edge[bend left] node[above] {$p$}   (3)
+			(5) edge[bend left] node[above] {$p$}   (N-1)
+			(N-1) edge[bend left] node[above] {$p$}   (N)
+			(N-1) edge[bend left] node[below] {$q$}   (5)
+			(3) edge[bend left] node[below] {$q$}   (1)
+			(1) edge[bend left] node[below] {$q$}   (0)
+            (0) edge[bend left] node[above] {$p$}   (1)
+            (N) edge[bend left] node[below] {$q$}   (N-1)
+			(0) edge[loop left]  node {$q$}()
+			(N) edge[loop right]  node {$p$}();
+	\end{pgfonlayer}
+\end{tikzpicture}
