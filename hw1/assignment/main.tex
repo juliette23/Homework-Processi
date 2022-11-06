@@ -26,6 +26,12 @@
 ]{fphw}
 
 % Template-specific packages
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage[table]{xcolor}
+\usepackage{matlab}
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{mathpazo} % Use the Palatino font
@@ -45,8 +51,8 @@
 
 \usepackage{amsmath}
 
-\usepackage[colorlinks = true, linkcolor = blue]{hyperref}
-\renewcommand{\equationautorefname}{equazione}
+%\usepackage[colorlinks = true, linkcolor = blue]{hyperref}
+%\renewcommand{\equationautorefname}{equazione}
 
 %----------------------------------------------------------------------------------------
 %	ASSIGNMENT INFORMATION
@@ -74,7 +80,185 @@
 %----------------------------------------------------------------------------------------
 %	ASSIGNMENT CONTENT
 %----------------------------------------------------------------------------------------
+\begin{problem}
+	\smallskip
+	Esibire (se esiste, altrimenti specificare che non esiste e motivare il perchè)
+	un Processo di Poisson non omogeneo con intensità pari a $\lambda(x) = 2\sin x$. Per "esibire" il processo qui si intende spiegare come fare
+	a costruirlo in maniera esplicita.
+	\smallskip
+\end{problem}
+\subsection*{Answer}
+	Per costruire un Processo di Poisson non omogeneo ci riferiamo al seguente teorema:\\
+	\\
+	\null\quad \textit{Sia $N(t)$ un processo di Poisson con parametro 1, e sia $\lambda(t)$ una funzione\\
+	\null\quad non negativa del tempo. Allora
+	\begin{equation*}
+		\quad M(t) = N(\int_0^t \lambda(\mu)d\mu)
+	\end{equation*}
+	\null\quad è un Processo di Poisson non omogeneo con intensità $\lambda(t)$}.\\
+	\\
+	In questo caso, la funzione $2\sin(x)$ non è non negativa, quindi non è possibile costruire un Processo di Poisson con tale intensità.\\
+	\\
 
+%------------------------------------------------
+\begin{problem}
+	\smallskip
+	Esibire (se esiste, altrimenti specificare che non esiste e motivare il perchè)
+	un Processo di Poisson non omogeneo con intensità pari a $\lambda(x) = 2\log (x+2)$. Per "esibire" il processo qui si intende spiegare come fare
+	a costruirlo in maniera esplicita.
+	\smallskip
+\end{problem}
+\subsection*{Answer}
+	Riferendoci al teorema precedente, presa $f(t) = 2t\log(t+2) - 2t = \int_0^t 2\log(\mu + 2)d\mu$, 
+	si ha che $M(t) = N(f(t))$ è il processo di Poisson desiderato.
+
+\section*{Esercizio 2}
+\begin{problem}
+	\smallskip
+	Sia $(X_n)_{n \ge 0}$ una catena di Markov sullo spazio $S$. Si provi che:\\
+	\begin{itemize}
+		\item Ogni classe $E$ chiusa e irriducibile per tale catena è massimale, 
+		ovvero se $E \subset F$ per una classe F chiusa e irriducibile, allora $E = F$.
+		\item Se $E_1, E_2$ sono due classi chiuse e irriducibili per la catena e
+		$E_1 \cap E_2 \ne \emptyset$, allora $E_1 = E_2$
+	\end{itemize}
+	\smallskip
+\end{problem}
+\subsection*{Answer}
+	\begin{itemize}
+		\item La chiusura di $E$ implica che $\forall i \in E$ se $i \to j$ allora $j \in E$.\\
+		Per irriducibilità di $F$ si ha che $i \leftrightarrow j ~ \forall i,j \in F$, quindi in particolare
+		\begin{equation*}
+			\forall i \in F ~ \exists j \in E \subset F : j \to i.
+		\end{equation*}
+		Essendo $E$ chiusa $i \in E$, quindi $F \subset E$;
+		poiché per ipotesi vale anche che $E \subset F$, allora $E = F$.
+		\item $E_1$ è irriducibile, quindi in particolare
+		\begin{equation*}
+			\forall i \in E_1 ~ \exists j \in E_1 \cap E_2 \ne \emptyset : i \leftrightarrow j.
+		\end{equation*}
+		Poiché anche $E_2$ è irriducibile, vale anche che $j \leftrightarrow k ~ \forall k \in E_2 \setminus E_1$.
+		Essendo la comunicazione una relazione di equivalenza, per la proprietà transitiva si ha che $i \leftrightarrow k$, quindi la chiusura di $E_2$ implica che $i \in E_2$.
+		Ne consegue che $E_1 \subset E_2$; analogamente si può dimostrare che $E_2 \subset E_1$, dunque $E_1 = E_2$
+	\end{itemize}
+
+\section*{Esercizio 5}
+
+\begin{problem}
+	\smallskip
+	A rabbit runs through the maze shown below. At each step it leaves
+	the room it is in by choosing at random one of the doors out of the room.\\
+	(1) Give the transition matrix P for this Markov chain.\\
+	(2) Show that it is irreducible but not aperiodic.\\
+	(3) Find the stationary distribution.\\
+	(4) Now suppose that a carrot is placed on a deadly trap in Room
+	5. The rabbit starts in Room 1. Find the expected number
+	of steps before reaching Room 5 for the first time, starting in Room 1.\\
+	(5) Find the expected time to return to room 1.
+	\smallskip
+\end{problem}
+
+\subsection*{Soluzione}
+	(1) Come si evince dalla consegna, il coniglio ad ogni passo sceglie a caso la stanza in cui andare tra quelle accessibili dalla stanza in cui si trova; per cui possiamo supporre che la probabilità che il coniglio vada in una stanza vicina in un passo sia equamente distribuita tra le stanze accessibili.\\
+	La matrice di transizione per questa catena di Markov è dunque la seguente:
+	\begin{equation*}
+		P = 
+		\begin{pmatrix}
+			0 & 0 & 1 & 0 & 0 & 0\\
+			0 & 0 & 1 & 0 & 0 & 0\\
+			1/4 & 1/4 & 0 & 1/4 & 1/4 & 0\\
+			0 & 0 & 1/2 & 0 & 0 & 1/2\\
+			0 & 0 & 1/2 & 0 & 0 & 1/2\\
+			0 & 0 & 0 & 1/2 & 1/2 & 0
+		\end{pmatrix}
+	\end{equation*}
+	\\
+	(2) La catena è irriducibile, in quanto il grafo ad essa associato è fortemente connesso, cioé 
+	per ogni coppia di nodi $(i,j)$ esiste un cammino da $i$ a $j$.\\
+	Se consideriamo inoltre lo stato $i = 6$, si può facilmente notare che
+	\begin{equation*}
+		p^{k}(i,i) > 0 \iff k = 2n : n \in \mathbb{N},
+	\end{equation*}
+	quindi $i$ ha periodo 2; di conseguenza, la catena non è aperiodica.\\
+	(3) Dal momento che il grafo associato a questa catena di Markov è indiretto, la componente i-esima della distribuzione stazionaria è data da 
+	\begin{equation*}
+		\pi(i) = \frac{\deg(i)}{N}, \qquad\textnormal{dove }N = \sum_{j=1}^6 \deg(j)
+	\end{equation*}
+	La distribuzione così ottenuta, ovvero $\pi = (\frac{1}{12}, \frac{1}{12}, \frac{1}{3}, \frac{1}{6}, \frac{1}{6}, \frac{1}{6})$ è effettivamente una distribuzione stazionaria, cioé tale che $P^T \pi = \pi$. Infatti:
+	\begin{equation*}
+		\begin{pmatrix}
+			0 & 0 & 1/4 & 0 & 0 & 0\\
+			0 & 0 & 1/4 & 0 & 0 & 0\\
+			1 & 1 & 0 & 1/2 & 1/2 & 0\\
+			0 & 0 & 1/4 & 0 & 0 & 1/2\\
+			0 & 0 & 1/4 & 0 & 0 & 1/2\\
+			0 & 0 & 0 & 1/2 & 1/2 & 0
+		\end{pmatrix}
+		\begin{pmatrix}
+			1/12 \\ 1/12 \\ 1/3 \\ 1/6 \\ 1/6 \\ 1/6
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			1/12 \\ 1/12 \\ 1/3 \\ 1/6 \\ 1/6 \\ 1/6
+		\end{pmatrix}
+	\end{equation*}
+	(4) Consideriamo
+	\begin{equation*}
+		m(i) = \mathbb{E}_i [T_5] = \mathbb{E}[T_5 | X_0 = i] \qquad \textnormal{dove }T_5\textnormal{ è il tempo di primo passaggio nello stato }i.
+	\end{equation*}
+	Si ha che:
+	\begin{align*}
+		m(1) &= 1 + m(3)\\
+		m(2) &= 1 + m(3)\\
+		m(3) &= 1 + (1/4)m(1) + (1/4)m(2) + (1/4)m(4) + (1/4)m(5)\\
+		m(4) &= 1 + (1/2)m(3) + (1/2)m(6)\\
+		m(5) &= 0\\
+		m(6) &= 1 + (1/2)m(5) + (1/2)m(4)
+	\end{align*}
+	Risolvendo questo sistema, si ottiene che $m(1) = 7$.\\
+	In alternativa, si possono eliminare gli archi in uscita dal nodo 5 cosicché esso diventi ricorrente, mentre gli altri rimangano transienti.\\
+	In questo modo vale la formula $m = (I - P_{T,T})^{-1}e$,
+	dove $P_{T,T}$ è la matrice che ha sulle righe e sulle colonne le probabilità di andare da uno stato transiente ad un altro stato transiente,
+	mentre $e = (1, 1, 1, 1, 1)'$.\\
+	Inserendo questi dati su Matlab si ottiene il seguente risultato:
+	\begin{matlabcode}
+		P_TT = [
+			0, 0, 1, 0, 0;
+			0, 0, 1, 0, 0;
+			1/4, 1/4, 0, 1/4, 0;
+			0, 0, 1/2, 0, 1/2;
+			0, 0, 0, 1/2, 0]
+		\end{matlabcode}
+		\begin{matlaboutput}
+		P_TT = 5x5    
+				0         0      1.00      0      0
+				0         0      1.00      0      0
+				0.25      0.25   0         0.25   0
+				0         0      0.50      0      0.50
+				0         0      0         0.50   0
+		
+		\end{matlaboutput}
+		\begin{matlabcode}
+		n = length(P_TT);
+		m = (eye(n) - P_TT) \ ones(n,1);
+		m'
+		\end{matlabcode}
+		\begin{matlaboutput}
+		ans = 1x5    
+			7.0000    7.0000    6.0000    6.0000    4.0000
+		
+		\end{matlaboutput}
+	
+	Si può facilmente notare che la prima componente del vettore $m$ è effettivamente $m(1) = 7$.\\
+	(5) Per calcolare il tempo di primo ritorno allo stato 1 ci riferiamo al seguente teorema:\\
+	\\
+	\null\quad \textit{Se una DTMC è irriducibile ed esiste una distribuzione stazionaria $\pi$, allora
+	\begin{equation*}
+		\quad\pi(i) = \frac{1}{\mathbb{E}_i [T_i]}
+	\end{equation*}
+	\null\quad è unica, e la catena è positiva ricorrente.}\\
+	\\
+	Nello specifico, quindi, per questa catena di Markov si ha che $\mathbb{E}_1 [T_1] = \frac{1}{\pi(1)} = 12$.
 \section*{Question 1}
 
 \begin{problem}
