@@ -190,9 +190,9 @@
 	\smallskip
 	Sia $(X_n)_{n \ge 0}$ una catena di Markov sullo spazio $S$. Si provi che:
 	\begin{enumerate}[(\itshape a\normalfont)]
-		\item Ogni classe $E$ chiusa e irriducibile per tale catena è massimale, 
-		ovvero se $E \subset F$ per una classe F chiusa e irriducibile, allora $E = F$.
-		\item Se $E_1, E_2$ sono due classi chiuse e irriducibili per la catena e
+		\item Ogni classe di comunicazione $E$  è massimale, 
+		ovvero se $E \subset F$ per una classe di comunicazione F, allora $E = F$.
+		\item Se $E_1, E_2$ sono due classi comunicanti per la catena e
 		$E_1 \cap E_2 \ne \emptyset$, allora $E_1 = E_2$
 	\end{enumerate}
 	\smallskip
@@ -200,20 +200,20 @@
 \medskip
 \subsection*{Soluzione}
 	\begin{enumerate}[(\itshape a\normalfont)]
-		\item La chiusura di $E$ implica che $\forall i \in E$ se $i \to j$ allora $j \in E$.\\
-		Per irriducibilità di $F$ si ha che $i \leftrightarrow j ~ \forall i,j \in F$, quindi in particolare
+		\item Dato che F è per ipotesi una classe di comunicazione, vale che $\forall i, j \in F\text{, }i\longleftrightarrow j$.
+		Quindi in particolare:
 		\begin{equation*}
 			\forall i \in F ~ \exists j \in E \subset F : j \to i.
 		\end{equation*}
-		Essendo $E$ chiusa, $i \in E$ e quindi $F \subset E$;
-		poiché per ipotesi vale anche che $E \subset F$, allora $E = F$.
-		\item $E_1$ è irriducibile, quindi in particolare
+		Ma essendo E una classe di comunicazione anch'essa, se $j\longrightarrow i$ allora $i \in E$.
+		Di conseguenza $F\subset E$, e dato che per ipotesi $E\subset F$, ciò implica $E=F$.
+		\item $E_1$ è una classe di comunicazione per cui
 		\begin{equation*}
 			\forall i \in E_1 ~ \exists j \in E_1 \cap E_2 \ne \emptyset : i \leftrightarrow j.
 		\end{equation*}
-		Poiché $E_2$ è irriducibile, vale anche che $j \leftrightarrow k ~ \forall k \in E_2 \setminus E_1$.
-		Essendo la comunicazione una relazione di equivalenza, per la proprietà transitiva si ha che $i \leftrightarrow k$, quindi la chiusura di $E_2$ implica che $i \in E_2$.
-		Ne consegue che $E_1 \subset E_2$; analogamente si può dimostrare che $E_2 \subset E_1$, dunque $E_1 = E_2$.
+		Poiché $E_2$ è anch'essa una classe di comunicazione, vale anche che $j \leftrightarrow k ~ \forall k \in E_2 \setminus E_1$.
+		Essendo la comunicazione una relazione di equivalenza, vale la proprietà transitiva la quale implica che $i \leftrightarrow k$.
+		Ne consegue che $i \in E_2$ e $k \in E_1$, perciò $E_1 \subset E_2$ ed $E_2 \subset E_1$, concludiamo che $E_1 = E_2$.
 	\end{enumerate}
 
 %----------------------------------------------------------------------------------------
