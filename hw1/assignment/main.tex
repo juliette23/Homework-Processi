@@ -393,7 +393,6 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 	\ctikzfig{fig7}
 	Come si evince dalla consegna, il coniglio ad ogni passo sceglie a caso la stanza in cui andare tra quelle accessibili da quella in cui si trova; per cui possiamo supporre che la probabilità che il coniglio vada in una stanza vicina in un passo sia equamente distribuita tra le stanze accessibili.\\
 	La matrice di transizione per questa catena di Markov è dunque la seguente:
-	
 	\begin{equation*}
 		P = 
 		\begin{pmatrix}
@@ -412,7 +411,7 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 		p^{k}(i,i) > 0 \iff k = 2n : n \in \mathbb{N},
 	\end{equation*}
 	quindi $i$ ha periodo 2; di conseguenza, la catena non è aperiodica.
-	\item Dal momento che il grafo associato a questa catena di Markov è indiretto, la componente i-esima della distribuzione stazionaria è data da 
+	\item Dal momento che il grafo associato a questa catena di Markov è indiretto e quindi bilanciato, la componente i-esima della distribuzione stazionaria è data da:
 	\begin{equation*}
 		\pi(i) = \frac{\deg(i)}{N}, \qquad\textnormal{dove }N = \sum_{j=1}^6 \deg(j)
 	\end{equation*}
@@ -439,7 +438,17 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 		m(i) = \mathbb{E}_i [T_5] = \mathbb{E}[T_5 | X_0 = i],
 	\end{equation*}
 	dove $T_5$ è il tempo di primo passaggio nello stato $i$.
-	Procedendo con l'analisi al primo passo, si ha che:
+	Ai fini dell'esercizio, immaginiamo che il coniglio si fermi nella stanza 5 dopo esserci arrivato la prima volta, cosicché tale stato diventi ricorrente. Con questa assunzione, chiamiamo $T = \{1, 2, 3, 4, 6\}$ l'insieme degli stati transienti; procedendo con l'analisi al primo passo si ha che
+	\begin{align*}
+		m(i) &= 1 + \sum_{j \in T} P_{ij}m(j) \qquad \textnormal{se } i \in T \\
+		m(5) &= 0
+	\end{align*}
+	Detto $e = (1, 1, 1, 1, 1)'$, il sistema si può riscrivere in forma matriciale:
+	\begin{equation*}
+		m = e + P_{T,T}m,
+	\end{equation*}
+	dove $P_{T,T}$ è la matrice che contiene le probabilità di passare da uno stato transiente ad un altro stato transiente.
+	Quindi:
 	\begin{align*}
 		m(1) &= 1 + m(3)\\
 		m(2) &= 1 + m(3)\\
@@ -448,12 +457,8 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 		m(5) &= 0\\
 		m(6) &= 1 + (1/2)m(5) + (1/2)m(4)
 	\end{align*}
-	Risolvendo questo sistema, si ottiene che $m(1) = 7$.\\
-	In alternativa, si possono eliminare dal grafo gli archi in uscita dal nodo 5 cosicché esso diventi ricorrente, mentre gli altri diventino transienti.\\
-	In questo modo vale la formula $m = (I - P_{T,T})^{-1}e$,
-	dove $P_{T,T}$ è la matrice che ha sulle righe e sulle colonne le probabilità di andare da uno stato transiente ad un altro stato transiente,
-	mentre $e = (1, 1, 1, 1, 1)'$.\\
-	Inserendo questi dati su Matlab si ottiene il seguente risultato:
+	La soluzione del sistema è dunque $m = (I - P_{T,T})^{-1}e$, da cui si ha in particolare che $m(1) = 7$.\\
+	Inserendo questi dati su Matlab si ottiene infatti il seguente risultato:
 	\begin{matlabcode}
 		P_TT = [
 			0, 0, 1, 0, 0;
