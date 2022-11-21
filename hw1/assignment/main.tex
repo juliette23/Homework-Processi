@@ -62,7 +62,7 @@
 
 \author{Andrea Ruglioni, Giulia Monchietto, Edoardo Venturini} % Student name
 
-\date{15 Novembre 2022} % Due date
+\date{22 Novembre 2022} % Due date
 
 \institute{Politecnico di Torino} % Institute or school name
 
@@ -138,8 +138,8 @@
 	\item Riferendoci al teorema precedente, presa $f(t) = 2t\log(t+2) - 2t = \int_0^t 2\log(\mu + 2)d\mu$, 
 	si ha che $M(t) = N(f(t))$ è il processo di Poisson desiderato.
 	\item Una distribuzione è stazionaria se e solo se può essere espressa come combinazione convessa di distribuzioni stazionarie estremali.\\
-	Perciò, se per assurdo esistesse più di una distribuzione stazionaria, ciò implicherebbe l'esistenza di infinite distribuzioni stazionarie ottenibili come combinazione convessa delle precedenti,
-	contraddicendo l'ipotesi iniziale dell'esistenza di più di una distribuzione stazionaria.
+	Perciò, se per assurdo avessimo un numero finito $n \ge 2$ di distribuzioni stazionarie, ciò implicherebbe l'esistenza di infinite distribuzioni stazionarie ottenibili come combinazione convessa delle precedenti,
+	contraddicendo l'ipotesi iniziale.
 	In conclusione, non può esistere una DTMC con esattamente $3$ distribuzioni stazionarie.
 	\item Consideriamo la seguente DTMC con relativa matrice di transizione P definita come:
 	\begin{equation*}
@@ -173,9 +173,9 @@
 		\end{pmatrix}
 	\end{align*}
 	Di conseguenza è possibile ottenere infinite distribuzioni stazionarie
-	esprimibili come combinazione convessa di $\pi$ e $\pi'$ come $\forall \lambda \in (0,1)$:
+	esprimibili come combinazione convessa di $\pi$ e $\pi'$:
 	\begin{equation*}
-		\lambda \pi' + (1-\lambda ) \pi 
+		\lambda \pi' + (1-\lambda ) \pi, \qquad \forall \lambda \in [0,1].
 	\end{equation*}
 	Per quanto riguarda la distribuzione limite, essa non esiste poichè per qualunque classe ricorrente
 	in cui la catena venga inizializzata, la DTMC rimarrà in quest'ultima classe con probabilità $1$ ad ogni tempo $t$.
@@ -200,20 +200,21 @@
 \medskip
 \subsection*{Soluzione}
 	\begin{enumerate}[(\itshape a\normalfont)]
-		\item Dato che F è per ipotesi una classe di comunicazione, vale che $\forall i, j \in F\text{, }i\longleftrightarrow j$.
+		\item Dato che F è per ipotesi una classe di comunicazione, vale che $\forall i, j \in F\text{, }i\leftrightarrow j$.
 		Quindi in particolare:
 		\begin{equation*}
-			\forall i \in F ~ \exists j \in E \subset F : j \to i.
+			\forall i \in F \quad \exists j \in E \subset F :\quad j \leftrightarrow i.
 		\end{equation*}
-		Ma essendo E una classe di comunicazione anch'essa, se $j\longrightarrow i$ allora $i \in E$.
+		Ma essendo E una classe di comunicazione anch'essa, se $j\leftrightarrow i$ allora necessariamente $i \in E$.
 		Di conseguenza $F\subset E$, e dato che per ipotesi $E\subset F$, ciò implica $E=F$.
 		\item $E_1$ è una classe di comunicazione per cui
 		\begin{equation*}
-			\forall i \in E_1 ~ \exists j \in E_1 \cap E_2 \ne \emptyset : i \leftrightarrow j.
+			\forall i \in E_1 \quad \exists j \in E_1 \cap E_2 \ne \emptyset : \quad i \leftrightarrow j.
 		\end{equation*}
 		Poiché $E_2$ è anch'essa una classe di comunicazione, vale anche che $j \leftrightarrow k ~ \forall k \in E_2 \setminus E_1$.
 		Essendo la comunicazione una relazione di equivalenza, vale la proprietà transitiva la quale implica che $i \leftrightarrow k$.
-		Ne consegue che $i \in E_2$ e $k \in E_1$, perciò $E_1 \subset E_2$ ed $E_2 \subset E_1$, concludiamo che $E_1 = E_2$.
+		Ne consegue dal fatto che $E_2$ è una classe di comunicazione che necessariamente $i \in E_2$, per cui $E_1 \subset E_2$, ed analogamente si ha che $k \in E_1$, quindi $E_2 \subset E_1$.
+		Perciò si ha che $E_1 = E_2$.
 	\end{enumerate}
 
 %----------------------------------------------------------------------------------------
@@ -255,7 +256,7 @@
 		\ctikzfig{fig4}
 		Ponendoci nel caso generale, supponiamo di partire con $0 \leq n \leq 8$ dollari.
 		Sia $U_n$ l'evento "uscire dalla prigione partendo con n dollari", $V$ l'evento "Mary vince una scommessa" e $P = \overline{V}$ "Mary perde una scommessa".
-		Allora, per la formula delle probabilità assoluta si ha che
+		Allora, per il teorema della probabilità assoluta si ha che
 		\begin{equation} \label{eq:es3_1}
 			\begin{aligned}
 				\mathbb{P}(U_n) &= \mathbb{P}(U_n | V)\mathbb{P}(V) + \mathbb{P}(U_n | P)\mathbb{P}(P) \\
@@ -300,7 +301,7 @@
 		\end{equation*}
 		ed in particolare, ponendo $n = 3$, si ottiene che $u_3 \approx 0.0964$.
 	
-	\item La strategia audace consiste invece nel scommettere ad ogni passo una quantità data da $min\{n, 8-n\}$.
+	\item La strategia audace consiste invece nello scommettere ad ogni passo una quantità data da $\min\{n, 8-n\}$.
 		In questo modo, l'\autoref{eq:es3_1} diventa:
 		\begin{equation*}
 			u_n = u_{min\{2n, 8\}}p + u_{max\{0, 2n-8\}}q.
@@ -361,7 +362,8 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 		\begin{equation*}
 			M = \sum_{x=0}^N \prod_{i=0}^{x-1} \left( \frac{p}{q} \right) = \sum_{x=0}^N \left(\frac{p}{q}\right)^x.
 		\end{equation*}
-		
+		Possiamo notare che nel caso particolare in cui $p = q$, si ha che la distribuzione stazionaria risultante è uniforme su $S$.
+		Infatti la matrice di transizione $P$ relativa è doppio stocastica.
 	
 \end{enumerate}
 
@@ -437,13 +439,13 @@ In tal caso Mary ha una probabilità di uscire di prigione del $25.6\%$, contro 
 	\begin{equation*}
 		m(i) = \mathbb{E}_i [T_5] = \mathbb{E}[T_5 | X_0 = i],
 	\end{equation*}
-	dove $T_5$ è il tempo di primo passaggio nello stato $i$.
+	dove $T_5$ è il tempo di primo passaggio nello stato 5.
 	Ai fini dell'esercizio, immaginiamo che il coniglio si fermi nella stanza 5 dopo esserci arrivato la prima volta, cosicché tale stato diventi ricorrente. Con questa assunzione, chiamiamo $T = \{1, 2, 3, 4, 6\}$ l'insieme degli stati transienti; procedendo con l'analisi al primo passo si ha che
 	\begin{align*}
 		m(i) &= 1 + \sum_{j \in T} P_{ij}m(j) \qquad \textnormal{se } i \in T \\
 		m(5) &= 0
 	\end{align*}
-	Detto $e = (1, 1, 1, 1, 1)'$, il sistema si può riscrivere in forma matriciale:
+	Detto $e = (1, 1, 1, 1, 1)'$, considerando solamente gli stati in $T$, il sistema si può riscrivere in forma matriciale:
 	\begin{equation*}
 		m = e + P_{T,T}m,
 	\end{equation*}
@@ -561,8 +563,8 @@ Dunque, partendo dallo stato $i = (i_1, ... , i_N)$ è possibile giungere allo s
 	n_{I(j_1)} \circ \dots \circ n_{I(j_N)} (i)
 \end{equation}
 infatti si ha che tramite $n_{I(j_N)} (i)$ si ottiene il valore $h = I(j_N)$ dell'indice di posizione dell'elemento $j_N$, che viene portato in prima posizione nella configurazione successiva.\\
-Procedendo in questo modo per gli $N-1$ step successivi, facciamo slittare gli elementi fino ad ottenere l elemento $j$.\\
-Essendo la catena irriducibile e aperiodica, essa ammette un'unica distribuzione di probabilità stazionaria.
+Procedendo in questo modo per gli $N-1$ step successivi, facciamo slittare gli elementi fino ad ottenere l'elemento $j$.\\
+Essendo la catena irriducibile e finita, essa ammette un'unica distribuzione di probabilità stazionaria.
 Osserviamo che il corrispettivo grafo è regolare poichè, per costruzione, ciascun nodo possiede lo stesso numero di archi entranti e archi uscenti.
 Dato un grafo regolare con relativa matrice di transizione P, il vettore "all-ones" $\mathbf{1}$ è un autovettore della matrice $P'$ relativo all'autovalore $\lambda = 1$.
 Ciò implica che $\mathbf{1}$ è una misura invariante per P. Normalizzando, si ottiene la seguente distribuzione di probabilità invariante:
