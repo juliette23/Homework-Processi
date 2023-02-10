@@ -1,0 +1,199 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fphw Assignment
+% LaTeX Template
+% Version 1.0 (27/04/2019)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Class by Felipe Portales-Oliva (f.portales.oliva@gmail.com) with template 
+% content and modifications by Vel (vel@LaTeXTemplates.com)
+%
+% Template (this file) License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	12pt, % Default font size, values between 10pt-12pt are allowed
+	%letterpaper, % Uncomment for US letter paper size
+	%spanish, % Uncomment for Spanish
+]{fphw}
+
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+%\usepackage{matlab}
+% Template-specific packages
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international character
+\usepackage[italian]{babel}
+\usepackage{mathpazo} % Use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+
+\usepackage{booktabs} % Required for better horizontal rules in tables
+
+\usepackage{listings} % Required for insertion of code
+
+\usepackage{enumerate} % To modify the enumerate environment
+
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+\usepackage{color}
+
+\usepackage{optidef}
+
+\usepackage{tikzit}
+
+\usepackage{tikz,tkz-graph}
+\usetikzlibrary{automata, calc, positioning, quotes}
+
+
+\usepackage{mathrsfs}
+
+\usepackage{enumitem}
+\usepackage{float}
+
+\sloppy
+\epstopdfsetup{outdir=./}
+\graphicspath{ {./figures/} }
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    }
+
+\definecolor{backcolour}{rgb}{0.98, 0.98, 0.95}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codeorange}{rgb}{1,0.58,0}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+    commentstyle=\slshape\color{codegreen},
+    numberstyle=\tiny,
+    keywordstyle=\bfseries\color{blue},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    %numbers=left,                    
+    %numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame = single,
+    captionpos = t
+}
+\lstset{style=mystyle}
+
+\DeclareMathOperator{\Ev}{\mathbb{E}}% expected value
+\DeclareMathOperator{\Pro}{\mathbb{P}}% probability
+
+\renewcommand{\labelenumi}{\textit{(\alph{enumi})}}
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Homework 2} % Assignment title
+
+\author{Andrea Ruglioni} % Student name
+
+\group{Giulia Monchietto}
+
+\date{20 Febbraio 2022} % Due date
+
+\institute{Politecnico di Torino} % Institute or school name
+
+\class{Processi stocastici} % Course or class name
+
+\professor{Barbara Trivellato} % Professor or teacher in charge of the assignment
+
+\newtheorem*{claim}{Claim}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+
+\maketitle % Output the assignment title, created automatically using the information in the custom commands above
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT CONTENT
+%----------------------------------------------------------------------------------------
+
+%\section*{Suddivisione del lavoro}
+%Ciascun membro del gruppo ha svolto tutti gli esercizi e ha revisionato l'intero homework.
+%La stesura in Latex del lavoro è stata suddivisa tra i partecipanti, in particolare mi sono occupato della scrittura dell'esercizio 2 insieme a Giulia Monchietto.
+
+\section*{Esercizio}
+\begin{problem}
+	Si consideri il problema della rovina del giocatore nel caso di scommesse non equilibrate,
+	quando cioè il gioco sia dato da $X_0 = 0, X_n = Y_1 + \dots + Y_n$, con $Y_i$ successione di variabli
+	aleatorie indipendenti di ugual legge $\Pro(Y_i = 1) = p, \Pro(Y_i = -1) = q = 1 - p$ e $p \neq q$. Per
+	fissare le idee, supponiamo $p > q > 0$. Per questo gioco, sia $\tau$ il suo primo tempo d'ingresso
+	nell'insieme $\{a, -b\}$, con $a$, $b$ interi positivi. Intuitivamente, si tratta di scommettere al gioco
+	fino all'esaurimento delle disponibilità finanziarie di uno dei due giocatori, che si suppone
+	possiedano l'uno $a$ e l'altro $b$ monete.
+
+	\smallskip
+\end{problem}
+
+\section*{Domanda 1}
+\begin{problem}
+	Giustificare perché il tempo d'arresto $\tau$ è finito quasi certamente.
+	\smallskip
+\end{problem}
+
+\subsection*{Soluzione}
+
+
+
+\section*{Domanda 2}
+\begin{problem}
+	Dimostrare che il processo $Z_0 = 1, Z_n = \alpha^{X_n}$, con $\alpha = q/p(< 1)$ è una martingala
+	rispetto alla filtrazione $(\mathcal{F}_n)_n$, con $\mathcal{F}_n = \sigma\{Y_1, \dots , Y_n\}$.
+	\smallskip
+\end{problem}
+
+\subsection*{Soluzione}
+
+
+
+\section*{Domanda 3}
+\begin{problem}
+	Calcolare $m_a = \Pro(X_{\tau} = a)$.
+	\smallskip
+\end{problem}
+
+\subsection*{Soluzione}
+
+
+
+\section*{Domanda 4}
+\begin{problem}
+	Calcolare $\Ev(\tau)$.
+	\smallskip
+\end{problem}
+
+\subsection*{Soluzione}
+
+
+
+\end{document}
