@@ -104,8 +104,7 @@
 
 \DeclareMathOperator{\Ev}{\mathbb{E}}% expected value
 \DeclareMathOperator{\Pro}{\mathbb{P}}% probability
-
-\renewcommand{\labelenumi}{\textit{(\alph{enumi})}}
+\DeclareMathOperator{\F}{\mathcal{F}}% filtrazione
 
 %----------------------------------------------------------------------------------------
 %	ASSIGNMENT INFORMATION
@@ -163,7 +162,31 @@
 
 \subsection*{Soluzione}
 
-
+Notiamo che le variabili aleatorie $Y_1, \dots, Y_n$ sono indipendenti identicamente distribuite ed appartenenti ad $L^2$.
+Infatti, $\forall i \in \mathbb{N}$
+\begin{equation*}
+    \begin{gathered}
+        \Ev[Y_i] = p - q = 2p - 1,\\
+        \Ev[Y_i^2] = p + q = 1.
+    \end{gathered}
+\end{equation*}
+Dunque, dalla legge forte dei grandi numeri segue che
+\begin{equation*}
+    \frac{\sum_{i=1}^n Y_i}{n} = \frac{X_n}{n} \xrightarrow[n \to \infty]{\text{q.c.}} 2p - 1.
+\end{equation*}
+Quindi, per definizione di limite, vale quasi certamente che, $\forall \epsilon > 0, \forall n \geq N \in \mathbb{N}$
+\begin{equation*}
+    \left| \frac{X_n}{n} - (2p-1) \right| < \epsilon.
+\end{equation*}
+In particolare, è valida la relazione
+\begin{equation*}
+    X_n > n(2p-1) - n \epsilon = n(2p-1-\epsilon).
+\end{equation*}
+Ricordando che $p > 1/2$, prendiamo $\epsilon = (2p-1)/2 > 0$, da cui si ottiene
+\begin{equation*}
+    X_n > n(p - \frac{1}{2}) \xrightarrow[n \to \infty]{} + \infty.
+\end{equation*}
+In conclusione, $\tau$ è finito quasi certamente perché, $\forall a \in \mathbb{N}, \exists \text{ q.c. } n^* \in \mathbb{N}$, tale per cui $X_{n^*} \geq a$.
 
 \section*{Domanda 2}
 \begin{problem}
@@ -174,8 +197,36 @@
 
 \subsection*{Soluzione}
 
+Dimostriamo che sono soddisfatte le tre proprietà caratterizzanti della martingala.
+\begin{enumerate}
+    \item $Z_n \sim \mathcal{F}_n$. Infatti
+        \begin{equation*}
+            Z_n = \alpha^{X_n} = \alpha^{\sum_{i=1}^n Y_i},
+        \end{equation*}
+        quindi è funzione delle sole v.a. $Y_1, \dots, Y_n$ ed è, di conseguenza, misurabile rispetto alla filtrazione $\mathcal{F}_n = \sigma\{Y_1, \dots , Y_n\}$.
+    \item $Z_n \in L^1$. Infatti
+        \begin{equation*}
+            \Ev[|Z_n|] = \Ev[Z_n] \leq \Ev[\alpha^{-n}] = \alpha^{-n} < \infty,
+        \end{equation*}
+        dove abbiamo utilizzato il fatto che $Z_n > 0$, che $Y_i >= -1 $ $\forall i \in \mathbb{N}$ e che l'esponenziale con $\alpha < 1$ è decrescente.
+    \item Verifichiamo ora la validità della proprietà di martingala
+        \begin{equation*}
+            \begin{aligned}
+                \Ev[Z_{n+1} | \F_n] &= \Ev[\alpha^{\sum_{i=1}^{n+1} Y_i} | \F_n]\\
+                &= \Ev[Z_n \alpha^{Y_{n+1}} | \F_n]\\
+                &= Z_n \Ev[\alpha^{Y_{n+1}} | \F_n]\\
+                &= Z_n \Ev[\alpha^{Y_{n+1}}] \\
+                &= Z_n.
+            \end{aligned}
+        \end{equation*}
+        La terza e la quarta uguaglianza sono dovute alle proprietà del valore atteso condizionato, poichè $Z_n$ è $\F_n$-misurabile ed $Y_{n+1}$ è indipendente da $\F_n = \sigma\{Y_1, \dots , Y_n\}$.
+        Infine, l'ultima uguaglianza è data da
+        \begin{equation*}
+            \Ev[\alpha^{Y_{n+1}}] = p \alpha + q \alpha^{-1} = p+q = 1.
+        \end{equation*}
+\end{enumerate}
 
-
+\newpage
 \section*{Domanda 3}
 \begin{problem}
 	Calcolare $m_a = \Pro(X_{\tau} = a)$.
@@ -183,49 +234,76 @@
 \end{problem}
 
 \subsection*{Soluzione}
-Dal punto precedente sappiamo che $Z_n = \alpha^{X_n}$ è una Martingala non negativa, di conseguenza il processo arrestato $Z_n^{\tau}$ possiederà anch'esso le proprietà di Martingala non negativa.\\
-In particolare $Z_n^{\tau} \leq \max \{\alpha^a, \alpha^{-b}\}$, le ipotesi del Lemma di Doob sono quindi soddisfatte e vale:
+Dal punto precedente sappiamo che $Z_n = \alpha^{X_n}$ è una martingala, di conseguenza anche il processo arrestato $Z_n^{\tau}$ è una martingala.
+Inoltre, questa è chiusa in quanto è dominata il $L^1$. Infatti, ricordando che $\alpha < 1$, si ha che
 \begin{equation*}
-\mathbb{E}[Z_n^{\tau}] = \mathbb{E}[Z_0^{\tau}]  = \mathbb{E}[Z_0] = 1
+    |Z_n^{\tau}| = Z_n^{\tau} \leq \alpha^{-b} \in L^1 \qquad \forall n \in \mathbb{N}.
 \end{equation*}
-Dato che $Z^{\tau} \in \{ \alpha^a, \alpha^{-b} \}$, ricordando che $\mathbb{P}(X_{\tau} = a) + \mathbb{P}(X_{\tau} = -b) = 1$ , si deduce che:
+Segue che è possibile applicare il teorema di arresto di Doob, il quale afferma che dati $\sigma \leq \tau$ tempi di arresto finiti quasi certamente, vale
 \begin{equation*}
-\mathbb{E}[Z_n^{\tau}] = \alpha^a m_a + \alpha^{-b} (1-m_a) = 1
+    \Ev[Z_{\tau} | \F_{\sigma}] = Z_{\sigma},
 \end{equation*}
-Di conseguenza ricaviamo la seguente soluzione:
+o equivalentemente, effettuando ad ambo i lati il valore atteso
 \begin{equation*}
-m_a = \frac{1-\alpha^{-b}}{\alpha^a-\alpha^{-b}}
-\end{equation*}.
+    \Ev[Z_{\tau}] = \Ev[Z_{\sigma}].
+\end{equation*}
+Ora, prendendo $\sigma = 0$, otteniamo l'uguaglianza $\Ev[Z_{\tau}] = \Ev[Z_0] = 1$.
+Dato che $Z_{\tau} \in \{ \alpha^a, \alpha^{-b} \}$, e ricordando che $\mathbb{P}(X_{\tau} = a) + \mathbb{P}(X_{\tau} = -b) = m_a + m_{-b} = 1$ , si deduce che:
+\begin{equation*}
+    \begin{aligned}
+        1 &= \Ev[Z_{\tau}]\\
+        &= m_a \alpha^a + m_{-b} \alpha^{-b}\\
+        &= m_a \alpha^a + (1 - m_a) \alpha^{-b}.
+    \end{aligned}
+\end{equation*}
+Dalla quale si ricava il valore cercato
+\begin{equation} \label{eq:ma}
+    m_a = \frac{1-\alpha^{-b}}{\alpha^a-\alpha^{-b}}.
+\end{equation}
 
+\newpage
 \section*{Domanda 4}
 \begin{problem}
 	Calcolare $\Ev(\tau)$.
 	\smallskip
 \end{problem}
-
 \subsection*{Soluzione}
-Per prima cosa osserviamo che
+Ricordiamo che $\Ev[Y_i] = 2p-1,$ $\forall i \in \mathbb{N}$, da cui segue che il processo definito come
 \begin{equation*}
-\mathbb{E}[Y_i] = 2p-1
+    M_n = \sum_{i = 1}^n (Y_i - (2p-1))  = X_n - n(2p-1), \qquad M_0 = 0,
 \end{equation*}
-Segue che il processo definito come:
+è una martingala, poichè somma di variabili aleatorie indipendenti e centrate.
+Dunque, anche $(M_n^{\tau})_{n \in \mathbb{N}} = (M_{n \wedge \tau})_{n \in \mathbb{N}}$ è una martingala, ed avrà quindi media costante
 \begin{equation*}
-M_n = \sum_{k = 1}^n (Y_k - (2p-1))  = X_n - n(2p-1)
+    \Ev[M_n^{\tau}] = \Ev[M_0^{\tau}] = \Ev[M_0] = 0.
 \end{equation*}
-è anch'esso una martingala.
-Notiamo inoltre che $|M_n - M_{n-1}| \leq 1 + |2p-1|$, perciò per il lemma di Doob le medie della martingala sono costanti.
-Considerando la martingala arrestata con $\tau$, deduciamo:
+Si ottiene quindi che
 \begin{equation*}
-\mathbb{E}[L_{\tau}] = \mathbb{E}[X_{\tau} - \tau(2p-1)] = \mathbb{E}[L_{0}] = 0
+    0 = \Ev[M_{n \wedge \tau}] = \Ev[X_{n \wedge \tau}] - \Ev[n \wedge \tau](2p-1),
 \end{equation*}
-Sfruttando la linearità del valore atteso otteniamo che:
+o equivalentemente
 \begin{equation*}
-\mathbb{E}[\tau] = \frac{1}{2p-1} \mathbb{E}[X_{\tau}]
+    \Ev[X_{n \wedge \tau}] = \Ev[n \wedge \tau](2p-1).
 \end{equation*}
-Sostituendo l'espressione di $m_a$ ottenuta sopra, otteniamo infine l'espressione del valore atteso di $\tau$ in funzione di $\alpha$.
+Calcoliamo il limite di ambo i lati per $n \to \infty$.
+A sinistra si ottiene che
 \begin{equation*}
-\mathbb{E}[\tau] = \frac{a}{2p-1} \frac{1-\alpha^{-b}}{\alpha^{a}-\alpha^{-b}} - \frac{b}{2p-1} \frac{\alpha^{a}-1}{\alpha^{a}-\alpha^{-b}}
-\end{equation*}.
+    \lim_{n \to \infty} \Ev[X_{n \wedge \tau}] = \Ev[X_{\tau}],
+\end{equation*}
+perché $\tau$ è finito q.c. e per il teorema di convergenza dominata, infatti
+\begin{equation*}
+    |X_{n \wedge \tau}| \leq \max(a, b) \in L^1, \qquad \forall n \in \mathbb{N}.
+\end{equation*}
+Invece, a destra otteniamo
+\begin{equation*}
+    \lim_{n \to \infty} \Ev[n \wedge \tau](2p-1) = \Ev[\tau](2p-1),
+\end{equation*}
+ancora per il fatto che $\tau$ è finito q.c e grazie al teorema di Beppo Levi (convergenza monotona), in quanto la successione $(n \wedge \tau)_{n \in \mathbb{N}}$ è non decrescente.
+In conclusione si ricava che
+\begin{equation*}
+        \Ev[\tau] = \frac{\Ev[X_{\tau}]}{2p - 1} = \frac{a m_a + b (1 - m_a)}{2p - 1},
+\end{equation*}
+dove $m_a$ è dato dall'equazione (\ref{eq:ma}) precedentemente ottenuta.
 
 
 \end{document}

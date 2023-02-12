@@ -33,7 +33,7 @@
 \newcommand{\DateLang}{Data di consegna}
 \newcommand{\StudentLang}{Studente}
 \newcommand{\GroupLang}{Gruppo}
-\newcommand{\ProfessorLang}{Professori}
+\newcommand{\ProfessorLang}{Professoressa}
 
 % Header and footers, we will use the titles also
 \RequirePackage{fancyhdr}
